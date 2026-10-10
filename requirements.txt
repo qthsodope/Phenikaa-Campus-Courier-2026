@@ -1,0 +1,15 @@
+# Python 3.14 (Ubuntu). Cài: .venv/bin/pip install -r requirements.txt
+numpy==2.5.3
+pillow==12.3.0
+scikit-learn==1.9.1
+scipy==1.18.1
+joblib==1.6.0
+threadpoolctl==3.7.0
+# PyTorch + torchvision: khối đọc ảnh (ResNet18 học sẵn); transformers + sentencepiece: mô hình ngôn ngữ khối 2 (PhoBERT)
+torch==2.14.1
+torchvision==0.29.1
+transformers==5.19.0
+tokenizers==0.23.2
+safetensors==0.8.0
+sentencepiece==0.2.2
+huggingface_hub==1.33.0

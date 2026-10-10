@@ -1,0 +1,4 @@
+{
+ "backbone": "resnet18",
+ "kp_input": 512
+}

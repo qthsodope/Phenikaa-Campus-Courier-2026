@@ -1,0 +1,61 @@
+# =====================================================================================================
+# .gitignore — bản nộp mã nguồn cho BTC (The Codeaholics)
+# Chỉ đưa lên: mã nguồn hệ thống (src/, script dự đoán + huấn luyện), README, requirements, các mô hình nhỏ.
+# Lý do từng mục: xem chú thích ngay trên mục đó.
+# =====================================================================================================
+
+# --- 1. Dữ liệu cuộc thi: thuộc BTC, BTC đã có; nặng ~500 MB; không được phát tán lại ---
+delivery_v2/
+*.png
+*.jpg
+*.jpeg
+
+# --- 2. Môi trường ảo + bộ nhớ đệm: tự sinh lại được (pip install / chạy lại) ---
+.venv/
+__pycache__/
+*.pyc
+cache/
+.claude/
+
+# --- 3. Kết quả chạy thử / bản huấn luyện nhanh: sản phẩm tạm của các lần chạy ---
+mock_test/
+models_quick/
+*.zip
+*.log
+
+# --- 4. Tài liệu giải thích, nhật ký làm việc, ghi chú nội bộ (chỉ để nhóm đọc, không phải hệ thống) ---
+CLAUDE.md
+DE_BAI_V2.md
+docs/
+logs/
+proposal/
+submissions/BEST_info.txt
+
+# --- 5. Script đo / chẩn đoán theo nhu cầu của nhóm (predict.py và huấn luyện KHÔNG cần tới) ---
+scripts/eval_blind.py
+scripts/eval_policy.py
+scripts/eval_vision.py
+scripts/kfold_policy.py
+scripts/mock_test.py
+
+# --- 6. Mô hình ---
+# Mặc định bỏ mọi file mô hình, rồi mở lại (dấu !) các file nhỏ cần cho predict.py.
+# Hai file > 100 MB (giới hạn mỗi file của GitHub) để trên Google Drive (xem README, mục 2):
+#   models/nlp_final.pt (538 MB) và models/phobert-base/pytorch_model.bin (543 MB).
+*.pt
+*.pkl
+*.bin
+models/*
+!models/config.json
+!models/kp.pt
+!models/edge.pt
+!models/node.pt
+!models/misc.pt
+!models/policy_v2.pkl
+!models/nlp_aux_final.pkl
+!models/phobert-base/
+models/phobert-base/*
+!models/phobert-base/config.json
+!models/phobert-base/vocab.txt
+!models/phobert-base/bpe.codes
+!models/phobert-base/tokenizer.json
